@@ -1,23 +1,18 @@
 const chainMaker = {
   getLength() {
-    throw 'Not implemented';
-    // remove line with error and write your code here
+    return arr.length;
   },
   addLink(value) {
-    throw 'Not implemented';
-    // remove line with error and write your code here
+    arr.push(`(${value})`);
   },
   removeLink(position) {
-    throw 'Not implemented';
-    // remove line with error and write your code here
+    arr.splice(position, 1);
   },
   reverseChain() {
-    throw 'Not implemented';
-    // remove line with error and write your code here
+    arr.reverse;
   },
   finishChain() {
-    throw 'Not implemented';
-    // remove line with error and write your code here
+    return arr.join('~~');
   }
 };
 
