@@ -1,18 +1,32 @@
-const chainMaker = {
+const chainMaker = {  
+  arr: [],  
   getLength() {
-    return arr.length;
+    this.arr.length;
+    return this;
   },
-  addLink(value) {
-    arr.push(`(${value})`);
+  addLink(value) { 
+    (value === undefined) ? value = '( )': value = ('( ' + value + ' )');   
+    this.arr.push(value); 
+    return this;   
   },
   removeLink(position) {
-    arr.splice(position, 1);
+    if (position <= 0 || position > this.arr.length || typeof position != 'number') {
+      this.arr = [];
+      throw new Error('removing wrong link');
+    }
+     this.arr.splice(position - 1, 1);
+     return this;
+     
   },
   reverseChain() {
-    arr.reverse;
+    this.arr.reverse();
+    return this;
   },
   finishChain() {
-    return arr.join('~~');
+    chain = this.arr.join('~~');
+    this.arr = [];
+    return chain;
+    
   }
 };
 
